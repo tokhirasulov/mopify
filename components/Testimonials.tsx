@@ -2,11 +2,21 @@
 
 import { Star } from "lucide-react";
 import { useTranslations } from "next-intl";
+<<<<<<< HEAD
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, Keyboard } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+=======
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+>>>>>>> cbfaf5719b5775187e847395613916d5bee8eefa
 
 const Testimonials = () => {
   const t = useTranslations("testimonials");
@@ -41,6 +51,7 @@ const Testimonials = () => {
             {t("subtitle")}
           </p>
         </div>
+<<<<<<< HEAD
 
         <Swiper
           modules={[Navigation, Pagination, Autoplay, Keyboard]}
@@ -91,6 +102,44 @@ const Testimonials = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+=======
+        
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full max-w-5xl mx-auto"
+        >
+          <CarouselContent>
+            {testimonials.map((testimonial, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <div
+                    className="glass-card p-8 rounded-2xl hover:scale-105 transition-transform duration-300 h-full"
+                    data-testid={`testimonial-card-${index}`}
+                  >
+                    <div className="flex gap-1 mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 fill-accent text-accent" />
+                      ))}
+                    </div>
+                    <p className="text-foreground/90 mb-6 leading-relaxed">
+                      "{testimonial.content}"
+                    </p>
+                    <div>
+                      <div className="font-bold">{testimonial.name}</div>
+                      <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex" />
+          <CarouselNext className="hidden md:flex" />
+        </Carousel>
+>>>>>>> cbfaf5719b5775187e847395613916d5bee8eefa
       </div>
     </section>
   );
