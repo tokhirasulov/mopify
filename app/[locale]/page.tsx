@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
@@ -34,9 +34,12 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen relative">
+    <div className='min-h-screen relative'>
       <CleaningBubbles />
-      <div className={`relative z-10 transition-opacity duration-500 ${showContent ? 'opacity-100' : 'opacity-0'}`}>
+      <div
+        className={`relative z-10 transition-opacity duration-500 ${
+          showContent ? "opacity-100" : "opacity-0"
+        }`}>
         <Navigation />
         <Hero />
         <Services />

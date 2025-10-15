@@ -6,7 +6,8 @@
     "getQuote": "Narx olish"
   },
   "hero": {
-    "title": "Sizning uchun professional tozalash",
+    "title": "Sizning uyingiz uchun professional tozalash",
+    "smallTitle": "Sizning uyingiz uchun tozalash",
     "titleHighlight": "Mukammal uy",
     "description": "Bizning yuqori darajadagi tozalash xizmatlarimiz bilan makoningizni o'zgartiring. Ishonchli, samarali va har doim benuqson.",
     "getStarted": "Boshlash",
@@ -52,7 +53,7 @@
     }
   },
   "whyUs": {
-    "title": "Nega bizni tanlaydilar",
+    "title": "Nega Biz?",
     "subtitle": "Biz minglab mijozlar ishongan ajoyib xizmat ko'rsatamiz",
     "certified": {
       "title": "Sertifikatlangan mutaxassislar",
