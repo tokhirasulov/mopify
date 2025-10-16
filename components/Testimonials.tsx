@@ -2,18 +2,33 @@
 
 import { Star } from "lucide-react";
 import { useTranslations } from "next-intl";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay, Keyboard } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 const Testimonials = () => {
   const t = useTranslations("testimonials");
 
   const testimonials = [
+    {
+      name: t("client1.name"),
+      role: t("client1.role"),
+      content: t("client1.content"),
+      rating: 5,
+    },
+    {
+      name: t("client2.name"),
+      role: t("client2.role"),
+      content: t("client2.content"),
+      rating: 5,
+    },
+    {
+      name: t("client3.name"),
+      role: t("client3.role"),
+      content: t("client3.content"),
+      rating: 5,
+    },
     {
       name: t("client1.name"),
       role: t("client1.role"),
@@ -44,44 +59,54 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay, Keyboard]}
+          loop={true}
+          autoplay={{ delay: 4500, disableOnInteraction: false }}
+          keyboard={{ enabled: true }}
+          spaceBetween={24}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+              spaceBetween: 16,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 24,
+            },
           }}
-          className='w-full max-w-5xl mx-auto'>
-          <CarouselContent>
-            {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className='md:basis-1/2 lg:basis-1/3'>
-                <div className='p-1'>
-                  <div
-                    className='glass-card p-8 rounded-2xl hover:scale-105 transition-transform duration-300 h-full'
-                    data-testid={`testimonial-card-${index}`}>
-                    <div className='flex gap-1 mb-4'>
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className='w-5 h-5 fill-accent text-accent'
-                        />
-                      ))}
-                    </div>
-                    <p className='text-foreground/90 mb-6 leading-relaxed'>
-                      "{testimonial.content}"
-                    </p>
-                    <div>
-                      <div className='font-bold'>{testimonial.name}</div>
-                      <div className='text-sm text-muted-foreground'>
-                        {testimonial.role}
-                      </div>
-                    </div>
+          aria-live='polite'>
+          {testimonials.map((testimonial, index) => (
+            <SwiperSlide
+              key={index}
+              data-testid={`testimonial-card-${index}`}
+              className='p-3'>
+              <div className='glass-card p-8 rounded-2xl hover:scale-105 transition-transform duration-300 h-full'>
+                <div className='flex gap-1 mb-4' aria-hidden='true'>
+                  {[...Array(testimonial.rating || 0)].map((_, i) => (
+                    <Star key={i} className='w-5 h-5 fill-accent text-accent' />
+                  ))}
+                </div>
+
+                <p className='text-foreground/90 mb-6 leading-relaxed'>
+                  "{testimonial.content}"
+                </p>
+
+                <div>
+                  <div className='font-bold'>{testimonial.name}</div>
+                  <div className='text-sm text-muted-foreground'>
+                    {testimonial.role}
                   </div>
                 </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className='hidden md:flex' />
-          <CarouselNext className='hidden md:flex' />
-        </Carousel>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
   );
