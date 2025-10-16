@@ -23,15 +23,28 @@ const Footer = () => {
             <div className='space-y-3'>
               <div className='flex items-center gap-3 text-muted-foreground'>
                 <Phone className='w-5 h-5 text-primary' />
-                <span>+998 90 123 45 67</span>
+                <a
+                  href='tel:+998999483113'
+                  className='hover:text-primary transition-colors'>
+                  +998 99 948 31 13
+                </a>
               </div>
               <div className='flex items-center gap-3 text-muted-foreground'>
                 <Mail className='w-5 h-5 text-primary' />
-                <span>info@mopify.uz</span>
+                <a
+                  href='mailto:mopifyuz@gmail.com'
+                  className='hover:text-primary transition-colors'>
+                  mopifyuz@gmail.com
+                </a>
               </div>
               <div className='flex items-center gap-3 text-muted-foreground'>
                 <MapPin className='w-5 h-5 text-primary' />
-                <span>{t("location")}</span>
+                <a
+                  href='https://yandex.uz/maps/-/CLVERQ-T'
+                  target='_blank'
+                  className='hover:text-primary transition-colors'>
+                  Toshkent shahri, Mirzo Ulugbek tumani, Akhmad Yugnakiy
+                </a>
               </div>
             </div>
           </div>

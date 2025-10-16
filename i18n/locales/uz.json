@@ -110,6 +110,8 @@
     "suppliesLabel": "Tozalash vositalari",
     "suppliesCheckbox": "Menda o'zim tozalash vositalari bor",
     "suppliesOwn": "Siz o'z tozalash vositalaringizdan foydalanasiz",
+    "additionalInfoPlaceholder": "Masalan, uy yoki ofis, maxsus ko'rsatmalar va h.k.",
+    "additionalInfoLabel": "Qo'shimcha ma'lumot",
     "suppliesOurs": "Biz tozalash vositalarini taqdim etamiz",
     "peopleLabel": "Nechta odam buyurtma qilmoqchisiz?",
     "peoplePlaceholder": "Odamlar sonini kiriting",

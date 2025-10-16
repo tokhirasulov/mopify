@@ -42,36 +42,28 @@ const Hero = () => {
 
             <div className='flex flex-col justify-center md:justify-start sm:flex-row gap-4'>
               <Button
-<<<<<<< HEAD
                 variant='hero'
                 size='lg'
-                className='text-[16px] sm:text-lg px-8'
-                data-testid='button-get-started'>
-=======
-                variant="hero"
-                size="lg"
-                className="text-lg px-8"
-                data-testid="button-get-started"
-                onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
-              >
->>>>>>> cbfaf5719b5775187e847395613916d5bee8eefa
+                className='text-lg px-8'
+                data-testid='button-get-started'
+                onClick={() =>
+                  document
+                    .getElementById("booking")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }>
                 {t("getStarted")}
                 <ArrowRight className='w-5 h-5' />
               </Button>
               <Button
-<<<<<<< HEAD
                 variant='secondary'
                 size='lg'
-                className='text-[16px] sm:text-lg px-8'
-                data-testid='button-learn-more'>
-=======
-                variant="secondary"
-                size="lg"
-                className="text-lg px-8"
-                data-testid="button-learn-more"
-                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-              >
->>>>>>> cbfaf5719b5775187e847395613916d5bee8eefa
+                className='text-lg px-8'
+                data-testid='button-learn-more'
+                onClick={() =>
+                  document
+                    .getElementById("services")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }>
                 {t("learnMore")}
               </Button>
             </div>

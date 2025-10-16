@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev --port 5000 --hostname 0.0.0.0",
+    "dev": "next dev --port 3000 --hostname 0.0.0.0",
     "build": "next build",
     "start": "next start --port 5000 --hostname 0.0.0.0",
     "lint": "next lint"
@@ -47,6 +47,7 @@
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.4.2",
+    "libphonenumber-js": "^1.12.24",
     "lucide-react": "^0.462.0",
     "negotiator": "^1.0.0",
     "next": "^15.5.4",
