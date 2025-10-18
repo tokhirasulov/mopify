@@ -13,9 +13,9 @@ const Footer = () => {
       <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='grid md:grid-cols-4 gap-12 mb-12'>
           <div className='col-span-2'>
-            <div className='flex items-center gap-2 mb-4 justify-center md:justify-start'>
-              <MopifyIcon className='w-6 h-6 text-primary' />
-              <span className='text-xl font-bold gradient-text'>Mopify</span>
+            <div className='flex items-baseline gap-[1px] mb-4 justify-center md:justify-start'>
+              <MopifyIcon className=' text-primary mopify-icon' />
+              <span className='text-xl font-bold gradient-text'>opify</span>
             </div>
             <p className='text-muted-foreground mb-6 text-center md:text-left'>
               {t("description")}

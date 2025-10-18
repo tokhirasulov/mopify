@@ -30,18 +30,18 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center gap-2">
+    <nav className='fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border'>
+      <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+        <div className='flex items-center justify-between h-16'>
+          <div className='flex items-baseline gap-[1px]'>
             <MopifyIcon
-              className="w-8 h-8 text-primary"
-              data-testid="icon-logo"
+              className='text-primary mopify-icon '
+              data-testid='icon-logo'
             />
             <span
               className='text-xl font-bold gradient-text'
               data-testid='text-brand'>
-              Mopify
+              opify
             </span>
           </div>
 
@@ -88,25 +88,31 @@ const Navigation = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Button 
-              variant='hero' 
-              size='sm' 
+            <Button
+              variant='hero'
+              size='sm'
               data-testid='button-get-quote'
-              onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
-            >
+              onClick={() =>
+                document
+                  .getElementById("booking")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }>
               {t("getQuote")}
             </Button>
           </div>
 
-          <div className="md:hidden">
+          <div className='md:hidden'>
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" data-testid="burger-menu-trigger">
-                  <Menu className="h-6 w-6" />
+                <Button
+                  variant='ghost'
+                  size='icon'
+                  data-testid='burger-menu-trigger'>
+                  <Menu className='h-6 w-6' />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[280px] sm:w-[350px]">
-                <div className="flex flex-col gap-6 mt-8">
+              <SheetContent side='right' className='w-[280px] sm:w-[350px]'>
+                <div className='flex flex-col gap-6 mt-8'>
                   <a
                     href='#services'
                     onClick={handleLinkClick}
@@ -128,12 +134,12 @@ const Navigation = () => {
                     data-testid='mobile-link-testimonials'>
                     {t("testimonials")}
                   </a>
-                  <div className="border-t pt-6">
+                  <div className='border-t pt-6'>
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Button
                           variant='outline'
-                          className="w-full justify-start"
+                          className='w-full justify-start'
                           data-testid='mobile-button-language'>
                           <Globe className='w-4 h-4 mr-2' />
                           {locale === "ru" ? "Русский" : "O'zbek"}
@@ -153,12 +159,14 @@ const Navigation = () => {
                       </DropdownMenuContent>
                     </DropdownMenu>
                   </div>
-                  <Button 
-                    variant='hero' 
-                    className="w-full" 
+                  <Button
+                    variant='hero'
+                    className='w-full'
                     onClick={() => {
                       handleLinkClick();
-                      document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
+                      document
+                        .getElementById("booking")
+                        ?.scrollIntoView({ behavior: "smooth" });
                     }}
                     data-testid='mobile-button-get-quote'>
                     {t("getQuote")}
